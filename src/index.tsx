@@ -1,8 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { initStore } from "./custom-store/useStore";
+// Item Store
+import itemActions from './custom-store/itemActions';
+import { itemInitialState } from "./custom-store/itemActions";
+// Counter Store
+import counterActions from "./custom-store/counterActions";
+import {counterInitialState } from "./custom-store/counterActions";
+
+initStore(itemActions, itemInitialState);
+initStore(counterActions, counterInitialState);
 
 ReactDOM.render(
   <React.StrictMode>
@@ -10,8 +18,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
