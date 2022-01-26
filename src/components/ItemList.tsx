@@ -1,5 +1,5 @@
 import React from "react";
-import ItemModel from "../model/ItemModal"
+import ItemModel from "../model/ItemModel"
 import Item from "./Item";
 
 const ItemList = (props: { items: ItemModel[]; onRemove: (id:string) => void}) => {

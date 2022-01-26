@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ItemModel from "../model/ItemModel";
 
 let globalStore:any = {};
 let subscribers: React.Dispatch<React.SetStateAction<{}>>[] = [];
@@ -17,7 +18,7 @@ const useStore = (subscribed:boolean = true) => {
         }
     }, [subscribed])
 
-    const dispatch = (actiontype:string,payload?:{item?:{id:string,name:string},id?:string}) => {
+    const dispatch = (actiontype:string,payload?:{item?:ItemModel,id?:string}) => {
         let newState;
         if (payload) {
             newState = actions[actiontype](payload, globalStore);

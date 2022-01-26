@@ -1,4 +1,4 @@
-import ItemModel from "../model/ItemModal";
+import ItemModel from "../model/ItemModel";
 
 const itemActions = {
     ADD_ITEM: (payload:{item: ItemModel}, globalStore:{items:ItemModel[]}) => {
